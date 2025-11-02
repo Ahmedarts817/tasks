@@ -1,10 +1,12 @@
 {
   "name": "tasks",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start":"node index.js"
+    "start": "node index.js",
+    "build": "esbuild index.js --bundle --platform=node --outfile=dist/index.js --external:mongoose --external:express",
+    "start:dist": "node dist/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +14,8 @@
   "dependencies": {
     "express": "^5.1.0",
     "mongoose": "^8.19.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
   }
 }

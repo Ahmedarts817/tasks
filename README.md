@@ -22,3 +22,10 @@ Notes:
 
 - The DB connection string is committed in `database/database.js`. Replace it with an environment variable for production.
 - `esbuild` is a devDependency used to produce the dist. The bundle excludes `express` and `mongoose` (they remain external) so the target environment must have them installed.
+
+API documentation: see `API.md` for endpoints, request examples, and response shapes.
+
+## CORS
+
+- The app supports configuring allowed origins via the `CORS_ALLOW_ORIGIN` environment variable (comma-separated). If not set, CORS allows all origins for browser requests.
+- Example: `CORS_ALLOW_ORIGIN=https://example.com,https://app.example.com`
